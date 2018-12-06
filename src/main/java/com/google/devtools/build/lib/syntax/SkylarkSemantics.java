@@ -168,6 +168,8 @@ public abstract class SkylarkSemantics {
 
   public abstract boolean incompatibleNoTransitiveLoads();
 
+  public abstract boolean incompatiblePackageNameIsAFunction();
+
   public abstract boolean incompatibleRangeType();
 
   public abstract boolean incompatibleRemoveNativeGitRepository();
@@ -175,6 +177,8 @@ public abstract class SkylarkSemantics {
   public abstract boolean incompatibleRemoveNativeHttpArchive();
 
   public abstract boolean incompatibleRemoveNativeMavenJar();
+
+  public abstract boolean incompatibleStaticNameResolution();
 
   public abstract boolean incompatibleStricArgumentOrdering();
 
@@ -225,10 +229,12 @@ public abstract class SkylarkSemantics {
           .incompatibleNoSupportToolsInActionInputs(false)
           .incompatibleNoTargetOutputGroup(false)
           .incompatibleNoTransitiveLoads(false)
+          .incompatiblePackageNameIsAFunction(true)
           .incompatibleRangeType(true)
           .incompatibleRemoveNativeGitRepository(true)
           .incompatibleRemoveNativeHttpArchive(true)
           .incompatibleRemoveNativeMavenJar(false)
+          .incompatibleStaticNameResolution(true)
           .incompatibleStricArgumentOrdering(false)
           .incompatibleStringIsNotIterable(false)
           .internalSkylarkFlagTestCanary(false)
@@ -295,6 +301,8 @@ public abstract class SkylarkSemantics {
 
     public abstract Builder incompatibleNoTransitiveLoads(boolean value);
 
+    public abstract Builder incompatiblePackageNameIsAFunction(boolean value);
+
     public abstract Builder incompatibleRangeType(boolean value);
 
     public abstract Builder incompatibleRemoveNativeGitRepository(boolean value);
@@ -302,6 +310,8 @@ public abstract class SkylarkSemantics {
     public abstract Builder incompatibleRemoveNativeHttpArchive(boolean value);
 
     public abstract Builder incompatibleRemoveNativeMavenJar(boolean value);
+
+    public abstract Builder incompatibleStaticNameResolution(boolean value);
 
     public abstract Builder incompatibleStricArgumentOrdering(boolean value);
 
